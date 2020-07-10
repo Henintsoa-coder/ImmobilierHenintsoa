@@ -4,11 +4,13 @@
 
 {% block body %}
     <div class="container mt-4">
+
         {% if error %}
             <div class="alert alert-danger">
                 {{ error.messageKey | trans(error.messagedata, 'security')}}
             </div>
         {% endif %}
+      
         <form action="{{ path('login') }}" method="post">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
@@ -21,5 +23,6 @@
 
             <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
+        
     </div>
 {% endblock %}
