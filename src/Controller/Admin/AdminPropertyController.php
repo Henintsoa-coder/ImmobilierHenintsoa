@@ -2,16 +2,16 @@
 
     namespace App\Controller\Admin;
 
-
-use App\Form\PropertyType;
-use App\Repository\PropertyRepository;
-use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManagerInterface; //A la place du ObjectManager, on utilise EntityManagerInterface ==> Symfony 4.4
-use App\Entity\Property;
-use Symfony\Component\HttpFoundation\Response;
+    use App\Entity\Option;
+    use App\Form\PropertyType;
+    use App\Repository\PropertyRepository;
+    use Doctrine\Common\Persistence\ObjectManager;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+    use Symfony\Component\HttpFoundation\Request;
+    use Doctrine\ORM\EntityManagerInterface; //A la place du ObjectManager, on utilise EntityManagerInterface ==> Symfony 4.4
+    use App\Entity\Property;
+    use Symfony\Component\HttpFoundation\Response;
 
 class AdminPropertyController extends AbstractController {
 
@@ -68,6 +68,10 @@ class AdminPropertyController extends AbstractController {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit(Property $property, Request $request) {
+
+        //$option = new Option();
+        
+        //dump($property->addOption($option));
 
         $form = $this->createForm(PropertyType::class, $property);
         $form->handleRequest($request); 
