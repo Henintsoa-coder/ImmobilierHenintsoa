@@ -11,7 +11,6 @@
     use Symfony\Component\HttpFoundation\Request;
     use Doctrine\ORM\EntityManagerInterface; //A la place du ObjectManager, on utilise EntityManagerInterface ==> Symfony 4.4
     use App\Entity\Property;
-    use Symfony\Component\HttpFoundation\Response;
 
 class AdminPropertyController extends AbstractController {
 
@@ -24,6 +23,7 @@ class AdminPropertyController extends AbstractController {
      * @var EntityManagerInterface
      */
     private $em;
+    
 
     public function __construct(PropertyRepository $repository, EntityManagerInterface $em){
         $this->repository = $repository;
