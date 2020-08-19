@@ -7,6 +7,7 @@
         "ext-iconv": "*",
         "cocur/slugify": "^4.0",
         "fzaninotto/faker": "^1.9",
+        "google/recaptcha": "^1.2",
         "knplabs/knp-paginator-bundle": "^5.2",
         "liip/imagine-bundle": "^2.3",
         "sensio/framework-extra-bundle": "^5.1",
@@ -32,6 +33,8 @@
         "symfony/twig-pack": "*",
         "symfony/validator": "4.4.*",
         "symfony/web-link": "4.4.*",
+        "symfony/web-server-bundle": "4.4.*",
+        "symfony/webpack-encore-bundle": "^1.7",
         "symfony/yaml": "4.4.*",
         "vich/uploader-bundle": "^1.14"
     },
@@ -40,8 +43,7 @@
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*",
-        "symfony/web-server-bundle": "4.4.*"
+        "symfony/test-pack": "*"
     },
     "config": {
         "preferred-install": {
@@ -51,7 +53,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "Grafikart\\RecaptchaBundle\\": "lib/RecaptchaBundle"
         }
     },
     "autoload-dev": {

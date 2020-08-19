@@ -72,7 +72,7 @@
          */
         public function getLastName(): ?string
         {
-            return $this->firstName;
+            return $this->lastName;
         }
 
         /**

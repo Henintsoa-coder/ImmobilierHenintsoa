@@ -46,11 +46,11 @@ class AdminPropertyController extends AbstractController {
             $property = new Property();
             //dump($property);
             $form = $this->createForm(PropertyType::class, $property);
-            $form->handleRequest($request); 
+            $form->handleRequest($request); /*La méthode handleRequest() permet de prendre en compte les données qui sont postées.*/  
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $this->em->persist($property);
-                $this->em->flush();
+                $this->em->persist($property); //Permet de faire suivre les données par l'EntityManager 
+                $this->em->flush(); //Permet d'insérer les données dans la base de données
                 $this->addFlash('success', 'Bien créé avec succès.');
                 return $this->redirectToRoute('admin.property.index');
             }

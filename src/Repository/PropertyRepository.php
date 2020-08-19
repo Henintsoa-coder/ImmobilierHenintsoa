@@ -58,7 +58,7 @@ class PropertyRepository extends ServiceEntityRepository
     }
 
     /**
-     * Retourne les dernières propriétés à vendre
+     * Retourne les dernières propriétés insérées par l'administrateur
      * @return Property
      */
     public function findLatest(): array
@@ -69,6 +69,10 @@ class PropertyRepository extends ServiceEntityRepository
                     ->getResult();
     }
 
+    /** 
+     * Fonction privée utilisée dans celles qui sont au-dessus
+     * @return ORMQueryBuilder
+     */
     private function findVisibleQuery(): ORMQueryBuilder{//factorisation pour une meilleure organisation. ;-)
         return $this->createQueryBuilder('p')
                     ->where('p.sold = false');
