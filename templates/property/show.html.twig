@@ -51,11 +51,14 @@
     </div>
     <div class="container mt-4">
 
-        <!--div class="nav nav-tabs" id="tab"></div-->
-
-        <p>
-            {{ property.description | nl2br }}
-        </p>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Description</h2>
+                <p>
+                    {{ property.description | nl2br }}
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8">
