@@ -18,28 +18,17 @@ class ContactNotification {
          */
         private $renderer;
 
-        public function __construct(Environment $renderer)
+        public function __construct(\Swift_Mailer $mailer, Environment $renderer)
         {
-            $transport = (new  Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-                ->setUserName('alexraven995@gmail.com')
-				->setPassword('demonfox991')
-				->setStreamOptions(array('ssl' => array('allow_self_signed' => true, 'verify_peer' => false)));
-            if ($this->mailer === null) {
-                $this->mailer = new \Swift_Mailer($transport);
-            }
+            $this->mailer = $mailer;
             $this->renderer = $renderer;
         }
 
-        public function notify(Contact $contact){
-
-            /*
-                $transport = (new  \Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-                    ->setStreamOptions(array('ssl' => array('allow_self_signed' => true, 'verify_peer' => false)));
-            */
-                
+        public function notify(Contact $contact)
+        {
             $message = (new \Swift_Message('Agence : ' . $contact->getProperty()->getTitle()))
-                ->setFrom('alexraven995@gmail.com')
-                ->setTo('alexraven995@gmail.com')
+                ->setFrom('noreply@server.com')
+                ->setTo('contact@agence.fr')
                 ->setReplyTo($contact->getEmail())
                 ->setBody($this->renderer->render('emails/contact.html.twig', [
                     'contact' => $contact

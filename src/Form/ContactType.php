@@ -21,9 +21,9 @@ class ContactType extends AbstractType
             ->add('phone', TextType::class)
             ->add('email', EmailType::class)
             ->add('message', TextareaType::class)
-            ->add('captcha', RecaptchaSubmitType::class, [
+            /*->add('captcha', RecaptchaSubmitType::class, [
                 'label' => 'Envoyer'
-            ])
+            ])*/
         ;
     }
 

@@ -11,3 +11,7 @@ Ce problème peut être résolu en utilisant le WebserverBundle de Symfony, mais
 -------------------------------------------------------------------------------------------------------
 
 Le css a été créé en utilisant le cdn de bootstrap. :-)
+
+-------------------------------------------------------------------------------------------------------
+Outil pour les e-mails : maildev. :-)
+^_^
